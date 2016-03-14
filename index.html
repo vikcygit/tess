@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" type="text/css" href="css/w3.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/mason.css">
+	<link rel="stylesheet" type="text/css" href="css/d3css.css">
+	<script src="js/jslibs/jquery-1.11.3.min.js"></script>	
+	<script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+	<script src="js/script.js"></script>
+
+</head>
+<body>
+
+	<div id="dashboard">
+		<h1>Tessaract Dashboard</h1>
+		
+
+		<!-- The Modal for features selection-->
+		<div id="id01" class="w3-modal">
+			<div class="w3-modal-content w3-animate-top w3-card-8">
+				<header class="w3-container w3-teal"> 
+					<span onclick="document.getElementById('id01').style.display='none'" class="w3-closebtn">x</span>
+					<h4>Parse & Select panel..</h4>
+				</header>
+				<div class="w3-container">
+					<!-- insert your form features -->
+					<!--Query box-->
+					<div class="modalFirst">
+						<textarea name="querybox" id="querybox" class="form-control" rows="4" maxlength="100"></textarea><button onclick="parseResults();"
+						class="w3-btn">parse</button>
+					</div>
+					<!--Preview result box-->
+					<div class="modalSecond">
+						<div class="modalSecondTitle">32 Records in your data have been parsed</div>
+						<div class="parseRecordsList">
+
+
+						</div>
+					</div>
+					<!--schema & choose graph-->
+					<div class="modalThird">
+						<div class="modalSecondTitle">Map Your Dimensions</div>
+
+					</div>
+
+				</div>
+			  <!--  <footer class="w3-container w3-teal">
+			      <p>Modal Footer</p>
+			  </footer>-->
+			</div>
+		</div>
+		<div class="leftContainer">
+			<div class="addTileDiv">
+				addTile button
+			</div>
+		</div>
+		<div class="rightContainer">
+
+			<div class="grid" data-masonry='{ "itemSelector": ".grid-item", "columnWidth": 160 }'>
+				<div id="chart" class="grid-item grid-item--width4 grid-item--height4">
+
+
+				</div>
+				<div class="grid-item grid-item--height3"></div>
+				<div class="grid-item grid-item--height3"></div>
+				<div class="grid-item grid-item--width3"></div>
+				<div class="grid-item grid-item--height2"></div>
+				<div class="grid-item grid-item--width2 grid-item--height3"></div>
+				<div class="grid-item grid-item--height2"></div>
+				<div class="grid-item grid-item--width2 grid-item--height2"></div>
+				<div class="grid-item grid-item--width2"></div>
+
+			</div>
+		</div>
+	</div>
+	<script src="//d3js.org/d3.v3.min.js"></script>
+	<script src="//d3js.org/topojson.v1.min.js"></script>
+	<script src="js/charts.js"></script>
+	<script>
+		$(document).ready(function(){
+			document.getElementById('id01').style.display='block';
+			renderMap();
+		})
+	</script>
+	<script src="//d3js.org/d3.v3.min.js"></script>
+	<script src="//d3js.org/topojson.v1.min.js"></script>
+
+</body>
+</html>
